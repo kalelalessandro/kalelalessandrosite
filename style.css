@@ -264,6 +264,8 @@ span{
     color: #ffffff;
 }
 
+/* Contato ajustado: formulário removido */
+
 .contato .social-contact{
     display: flex;
     justify-content: center;
@@ -272,7 +274,7 @@ span{
 }
 
 .contato .social-contact a{
-    font-size: 3rem;
+    font-size: 3rem; /* maior tamanho */
     color: #00ff0d;
     transition: 0.3s ease;
 }
@@ -290,18 +292,18 @@ span{
 }
 
 .email-copy input{
-    padding: 1rem 1.2rem;
-    font-size: 1.6rem;
+    padding: 1rem 1.2rem; /* maior */
+    font-size: 1.6rem; /* maior */
     border-radius: 0.5rem;
     border: 2px solid #00ff0d;
     background-color: rgba(0,0,0,0.6);
     color: white;
-    width: 400px;
+    width: 400px; /* maior largura */
 }
 
 .email-copy button{
-    padding: 1rem 1.2rem;
-    font-size: 1.6rem;
+    padding: 1rem 1.2rem; /* maior */
+    font-size: 1.6rem; /* maior */
     border-radius: 0.5rem;
     border: 2px solid #00ff0d;
     background-color: black;
@@ -316,84 +318,20 @@ span{
     transform: scale(1.05);
 }
 
-
 @media (max-width: 1000px){
-    header{
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    nav{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
     .home{
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 4rem;
     }
 
     .home-img img{
         width: 50%;
-        margin-top: 0;
-    }
-
-    .home .home-content h1{
-        font-size: 4rem;
-    }
-
-    .home-content h3{
-        font-size: 2.5rem;
+        margin: 2rem auto 0 auto; /* centraliza no celular */
+        display: block;
     }
 
     .projetos .projects-grid{
         grid-template-columns: 1fr;
-    }
-
-    .email-copy{
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .email-copy input{
-        width: 90%;
-        font-size: 1.4rem;
-    }
-
-    .email-copy button{
-        width: auto;
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 600px){
-    .logo{
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    nav a{
-        font-size: 1.5rem;
-        margin: 0 1rem;
-    }
-
-    .home-img img{
-        width: 70%;
-    }
-
-    .home .home-content h1{
-        font-size: 3rem;
-    }
-
-    .home-content h3{
-        font-size: 2rem;
-    }
-
-    .contato .social-contact a{
-        font-size: 2.5rem;
     }
 }
