@@ -264,7 +264,6 @@ span{
     color: #ffffff;
 }
 
-/* Contato ajustado: formulário removido */
 
 .contato .social-contact{
     display: flex;
@@ -274,7 +273,7 @@ span{
 }
 
 .contato .social-contact a{
-    font-size: 3rem; /* maior tamanho */
+    font-size: 3rem;
     color: #00ff0d;
     transition: 0.3s ease;
 }
@@ -292,18 +291,18 @@ span{
 }
 
 .email-copy input{
-    padding: 1rem 1.2rem; /* maior */
-    font-size: 1.6rem; /* maior */
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
     border-radius: 0.5rem;
     border: 2px solid #00ff0d;
     background-color: rgba(0,0,0,0.6);
     color: white;
-    width: 400px; /* maior largura */
+    width: 400px;
 }
 
 .email-copy button{
-    padding: 1rem 1.2rem; /* maior */
-    font-size: 1.6rem; /* maior */
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
     border-radius: 0.5rem;
     border: 2px solid #00ff0d;
     background-color: black;
@@ -319,16 +318,52 @@ span{
 }
 
 @media (max-width: 1000px){
+    header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    nav a{
+        margin: 0;
+    }
+
+    .logo{
+        font-size: 2.4rem;
+        text-align: center;
+        white-space: nowrap; 
+    }
+
     .home{
         flex-direction: column;
         text-align: center;
-        gap: 4rem;
+        gap: 3rem;
     }
 
     .home-img img{
-        width: 50%;
-        margin: 2rem auto 0 auto; /* centraliza no celular */
+        width: 70%; 
+        margin: 0 auto;
         display: block;
+        margin-top: 2rem;
+    }
+
+    .home-content h1{
+        font-size: 3.5rem; 
+    }
+
+    .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .typing-text{
+        font-size: 2.5rem;
     }
 
     .projetos .projects-grid{
