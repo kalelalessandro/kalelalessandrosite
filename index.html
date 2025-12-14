@@ -110,7 +110,6 @@
                 </div>
             </div>
 
-            <!-- PROJETO 7 -->
             <div class="project-card">
                 <video controls>
                     <source src="projeto7.mp4" type="video/mp4">
@@ -123,7 +122,6 @@
                 </div>
             </div>
 
-            <!-- PROJETO 8 -->
             <div class="project-card">
                 <video controls>
                     <source src="projeto8.mp4" type="video/mp4">
@@ -156,50 +154,59 @@
     </section>
 
     <script>
-        const words = ["Front-end","Desenvolvedor Python"];
-        let i = 0;
-        let j = 0;
-        let currentWord = '';
-        let isDeleting = false;
-        const speed = 200;
+        document.addEventListener("DOMContentLoaded", () => {
 
-        function type() {
-            const element = document.querySelector('.typing-text span');
-            if(i >= words.length) i = 0;
-            const fullWord = words[i];
+            const words = ["Front-end", "Desenvolvedor Python"];
+            let i = 0;
+            let j = 0;
+            let currentWord = '';
+            let isDeleting = false;
+            const speed = 200;
 
-            if(!isDeleting){
-                currentWord = fullWord.substring(0,j+1);
-                element.textContent = currentWord;
-                j++;
-                if(j === fullWord.length){
-                    isDeleting = true;
-                    setTimeout(type, 1000);
-                    return;
+            function type() {
+                const element = document.querySelector('.typing-text span');
+                if (!element) return;
+
+                if (i >= words.length) i = 0;
+                const fullWord = words[i];
+
+                if (!isDeleting) {
+                    currentWord = fullWord.substring(0, j + 1);
+                    element.textContent = currentWord;
+                    j++;
+                    if (j === fullWord.length) {
+                        isDeleting = true;
+                        setTimeout(type, 1000);
+                        return;
+                    }
+                } else {
+                    currentWord = fullWord.substring(0, j - 1);
+                    element.textContent = currentWord;
+                    j--;
+                    if (j === 0) {
+                        isDeleting = false;
+                        i++;
+                    }
                 }
-            }else{
-                currentWord = fullWord.substring(0,j-1);
-                element.textContent = currentWord;
-                j--;
-                if(j === 0){
-                    isDeleting = false;
-                    i++;
-                }
+                setTimeout(type, speed);
             }
-            setTimeout(type, speed);
-        }
-        type();
 
-        const copyButton = document.getElementById('copyButton');
-        copyButton.addEventListener('click', () => {
-            const email = document.querySelector('.email-copy input').value;
-            navigator.clipboard.writeText(email).then(() => {
-                const originalText = copyButton.textContent;
-                copyButton.textContent = 'Copiado';
-                setTimeout(() => {
-                    copyButton.textContent = originalText;
-                }, 2000);
-            });
+            type();
+
+            const copyButton = document.getElementById('copyButton');
+            if (copyButton) {
+                copyButton.addEventListener('click', () => {
+                    const email = document.querySelector('.email-copy input').value;
+                    navigator.clipboard.writeText(email).then(() => {
+                        const originalText = copyButton.textContent;
+                        copyButton.textContent = 'Copiado';
+                        setTimeout(() => {
+                            copyButton.textContent = originalText;
+                        }, 2000);
+                    });
+                });
+            }
+
         });
     </script>
 </body>
